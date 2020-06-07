@@ -44,11 +44,10 @@
     echo "\n Los parametros pasados no son correctos \n";
   }
 
-  $_directory = trim( $argv[1]);
-  $_class = trim( $argv[2]);
-  $_method = trim( $argv[3]);
+  $_class = trim( $argv[1]);
+  $_method = trim( $argv[2]);
 
-  ( isset( $argv[4]) ? $data = $argv[4] : $data = array());
+  ( isset( $argv[3]) ? $data = $argv[3] : $data = array());
 
   # Cargamos la clase (fichero) que vamos a utilizar dinamicamente
   $class_include = dirname(__FILE__)."/scripts/".$_directory."/".$_class.".php";
