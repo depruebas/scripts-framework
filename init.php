@@ -11,10 +11,7 @@
 
   # Incluimos los headers para que
   # el content-type y el cache ( no queremos que se cacheen los resultados )
-  header('Content-Type: text/html; charset=utf-8');
-  header('Cache-Control: no-cache');
-  header('Cache-Control: no-store');
-  header('Pragma: no-cache');
+  header('Content-Type: text/plain; charset=utf-8');
 
 
   # Añadimos las librerias .php que vamos a necesitar en la API
