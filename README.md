@@ -7,7 +7,7 @@ How does it work?
 <br><br>
 <b>php init.php Test Init 'param1 param2 param3'</b>
 <br><br>
-Test is the name of the class<br>
+Test is the name of the class and file ( Test.php into the scripts directory) <br>
 Init is the name of the method into class Test<br>
 
 The framework has a 
