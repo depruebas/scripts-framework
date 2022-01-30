@@ -8,7 +8,7 @@ class MessagesClass
   {
 
     # Obtenemos la ruta de los logs del fichero de configuración
-    $file = ConfigClass::get("config.ruta_logs")['general'] . "trace.log";
+    $file = ConfigClass::get("config.config.ruta_logs")['general'] . "trace.log";
 
     # Obtenemos la fecha actual
     $date = date( "Y-m-d H:i:s");
@@ -23,7 +23,7 @@ class MessagesClass
 
     # Grabamos el log en la base de datos en la tabla logs
   	$params['query'] = "insert into logs( type, message, code) values( ?, ?, ?)";
-    $params['params'] = array( $data['type'], $data['message'], $data['code']);
+    $params['params'] = [ $data['type'], $data['message'], $data['code']];
 
     PDOClass2::Execute( $params);
 
