@@ -2,12 +2,13 @@
 
 return [
 
-	'default' => [
+    'default' => [
 
-      'dsn' => 'mysql:host=localhost;dbname=TEST;charset=utf8mb4',
-      'username' => 'dev',
-      'password' => 'mysql',
+      'dsn' => 'mysql:host=172.17.0.5;dbname=sakila;charset=utf8mb4',
+      'username' => 'root',
+      'password' => 'root',
 
     ],
+
 
 ];

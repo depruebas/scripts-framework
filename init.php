@@ -34,8 +34,6 @@
 
   # Guardamos en un array de entrada los datos generales de la llamada
 
-  print_r( count( $argv));
-
   if ( count( $argv) < 3)
   {
     echo EOF . "Los parametros pasados no son correctos." . EOF;
@@ -47,7 +45,7 @@
   ( isset( $argv[3]) ? $data = $argv[3] : $data = []);
 
   # Cargamos la clase (fichero) que vamos a utilizar dinamicamente
-  $class_include = dirname(__FILE__)."/scripts/".$_directory."/".$_class.".php";
+  $class_include = dirname(__FILE__)."/scripts/".$_class.".php";
 
   if ( file_exists( $class_include))
   {
@@ -56,11 +54,10 @@
 
       $connection = PDOManager::Connection( ConfigClass::get("config.databases.default"));
 
-      print_r ( $connection);
-      die;
-
       $action = new $_class();
-      $return = $action->{$_method} ( $data);
+      $return = $action->{$_method} ( $data, $connection);
+
+      $connection = null;
 
       echo $return;
 

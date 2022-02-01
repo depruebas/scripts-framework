@@ -3,11 +3,17 @@
 class Test extends CommonClass
 {
 
-	public function Init( $data = null)
+	public function Init( $data = null, $connection = null)
 	{
-		print_r( $data);
 
-		echo "\nsoy init\n";
+		echo EOF . "I'm Init method" . EOF . EOF;
+
+
+		$params['query'] = "select * from city limit 10";
+    $params['params'] = array( );
+    $rows = PDOManager::ExecuteQuery( $params, $connection->data);
+
+    print_r($rows);
 	}
 
 }

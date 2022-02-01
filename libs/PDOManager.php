@@ -42,12 +42,12 @@ class PDOManager
   }
 
 
-  public static function ExecuteQuery( $params = [])
+  public static function ExecuteQuery( $params = [], object $conn)
   {
 
    try
     {
-      $stmt = $params['conn']->prepare( $params['query']);
+      $stmt = $conn->prepare( $params['query']);
       $stmt->execute( $params['params'] );
       $data = $stmt->fetchAll( PDO::FETCH_ASSOC);
       $count = $stmt->rowCount();
@@ -71,12 +71,12 @@ class PDOManager
     return ( $return);
   }
 
-  public static function Execute( $params = [])
+  public static function Execute( $params = [], object $conn)
   {
 
     try
     {
-      $stmt = $params['conn']->prepare( $params['query']);
+      $stmt = $conn->prepare( $params['query']);
       $stmt->execute( $params['params'] );
       $count = $stmt->rowCount();
 
@@ -99,7 +99,7 @@ class PDOManager
 
   }
 
-  public static function Insert( $params = [])
+  public static function Insert( $params = [], object $conn)
   {
 
     $data = [];
@@ -121,7 +121,7 @@ class PDOManager
 
       $sql = "insert into " . $params['table'] . "( {$fields} ) values( ".$fields_values." )";
 
-      $stmt = $params['conn']->prepare( $sql);
+      $stmt = $conn->prepare( $sql, );
       $r = $stmt->execute( explode( ".:.", $a_values));
       $count = $stmt->rowCount();
       $id = $params['conn']->lastInsertId();
