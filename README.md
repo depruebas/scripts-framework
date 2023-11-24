@@ -13,7 +13,7 @@ Init is the name of the method into class Test<br>
 The framework has a 
 <ul>
 <li>a class to catch errors
-<li>a class to access MySql data, postgreSQL
+<li>a class to access MySql, postgreSQL using PDO
 <li>a class to record logs
 <li>a class to read configuration files.
 </ul>
