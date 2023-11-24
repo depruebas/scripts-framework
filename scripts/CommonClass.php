@@ -9,5 +9,14 @@
 class CommonClass
 {
 
+  function __construct()
+  {
+    PDOManager::Connection( ConfigClass::get("config.databases.default"));
+  }
+
+  function __destruct()
+  {
+    PDOManager::Close();
+  }
 
 }

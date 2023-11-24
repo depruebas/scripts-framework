@@ -1,6 +1,6 @@
 <?php
 
-  function debug( $var)
+  function dd( $var, $die = false)
   {
     $debug = debug_backtrace();
     echo "<pre>";
@@ -8,16 +8,20 @@
     print_r($var);
     echo "</pre>";
     echo "<br>";
+
+    if ( $die) die();
+
   }
 
-  function debug_cli( $var)
+  function dc( $var, $die = false)
   {
     $debug = debug_backtrace();
-    echo "<pre>";
     echo $debug[0]['file']." ".$debug[0]['line']."\n\n";
     print_r($var);
-    echo "</pre>";
     echo "\n";
+
+    if ( $die) die();
+
   }
 
 

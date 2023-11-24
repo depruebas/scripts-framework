@@ -52,12 +52,8 @@
       require_once dirname(__FILE__)."/scripts/CommonClass.php";
       require_once $class_include;
 
-      $connection = PDOManager::Connection( ConfigClass::get("config.databases.default"));
-
       $action = new $_class();
-      $return = $action->{$_method} ( $data, $connection);
-
-      $connection = null;
+      $return = $action->{$_method} ( $data);
 
       echo $return;
 
